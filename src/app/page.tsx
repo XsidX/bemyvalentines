@@ -143,15 +143,15 @@ export default function Home() {
             </motion.div>          
           )}
         </AnimatePresence>
+        {!yesLove && count > 0 &&(
+          // <RejectionChatComponent messages={messages} />
+          <div 
+            ref={rejectionNote}
+            className="text-rose-950 text-4xl font-bold z-10 bg-rose-200/75 px-6 py-3">
+            {lmsgs[currentIndex]}
+          </div>
+        )}
       </div>
-      {!yesLove && count > 0 &&(
-        // <RejectionChatComponent messages={messages} />
-        <div 
-          ref={rejectionNote}
-          className="text-rose-950 text-4xl font-bold z-10 bg-rose-200/50 px-6 py-3">
-          {lmsgs[currentIndex]}
-        </div>
-      )}
 
       {
         isMobile ? (
