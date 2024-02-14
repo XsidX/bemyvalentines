@@ -1,12 +1,12 @@
 
 
 const lmsgs = [
-    "You are breaking my heart, Tiffah.",
     "Ouch, my heart, that 'no' stings!",
     "Oh, I'm not joking Tiffah, I want all of you.",
     "Rejection served cold, heart needs sweater.",
     "Ouch, that hurt",
     "Love's light turned red, heart at a stop.",
+    "You are breaking my heart, Tiffah.",
     "Heart threw a party, your 'no' crashed it.",
     "Quit playing games, and we can get to playing with each other.",
     "Heart's a boomerang, keeps coming back. Your move!",

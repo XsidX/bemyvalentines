@@ -147,7 +147,7 @@ export default function Home() {
           // <RejectionChatComponent messages={messages} />
           <div 
             ref={rejectionNote}
-            className="text-rose-950 text-4xl font-bold z-10 bg-rose-200/75 px-6 py-3">
+            className="text-rose-950 text-4xl font-bold z-10 bg-rose-200/75 px-6 py-3 rounded-md shadow-md animate-pulse">
             {lmsgs[currentIndex]}
           </div>
         )}
