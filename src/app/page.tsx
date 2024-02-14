@@ -135,10 +135,10 @@ export default function Home() {
               <div className="mt-10 2xl:mt-32 text-3xl font-bold flex justify-center items-center">
                 <button
                   onClick={handleYes} 
-                  className={`z-50 bg-rose-950 text-white px-6 py-3 rounded-lg mt-10 shadow-md ${count > 1 && 'animate-bounce'} transition ease-in-out duration-75 hover:bg-rose-900`}>Yes, I will</button>
+                  className={`z-50 bg-rose-950 text-white px-6 py-3 rounded-lg mt-10 shadow-md ${count > 1 && 'animate-bounce'} transition ease-in-out duration-75 hover:bg-rose-500`}>Yes, I will</button>
                 <button
                   onClick={handleNo}
-                  className="z-50 bg-rose-100 hover:bg-rose-300 text-rose-950 px-6 py-3 rounded-lg mt-10 ml-5 shadow-md">No</button>
+                  className="z-50 bg-rose-100 hover:bg-rose-500 hover:text-white text-rose-950 px-6 py-3 rounded-lg mt-10 ml-5 shadow-md">No</button>
               </div>
             </motion.div>          
           )}
