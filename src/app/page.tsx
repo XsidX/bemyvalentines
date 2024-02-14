@@ -43,30 +43,32 @@ export default function Home() {
       x = Math.floor(Math.random() * (window.innerWidth - 600 - (buttonWidth * 3)));
       y = Math.floor(Math.random() * (window.innerHeight - 300 - (buttonHeight * 3)));
     } else {
-      x = Math.floor(Math.random() * (window.innerWidth - 300 - (buttonWidth * 3)));
-      y = Math.floor(Math.random() * (window.innerHeight - 150 - (buttonHeight * 3)));
+      x = Math.floor(Math.random() * (window.innerWidth - (buttonWidth * 3)));
+      y = Math.floor(Math.random() * (window.innerHeight - (buttonHeight * 3)));
     }
 
     // Set the button's position
     button.style.position = 'absolute';
     button.style.left = `${x}px`;
     button.style.top = `${y}px`;
-
-    button.style.zIndex = '50';
-
     // generate random coordinates for the rejection note, opposite of the button
+
+    if(rejectionNote.current) {
+
+    const rejectionNoteWidth = rejectionNote.current.offsetWidth;
+    const rejectionNoteHeight = rejectionNote.current.offsetHeight;
 
     let x2, y2;
     if(!isMobile) {
-      x2 = Math.floor(Math.random() * (window.innerWidth - 600 - (buttonWidth * 3)));
-      y2 = Math.floor(Math.random() * (window.innerHeight - 300 - (buttonHeight * 3)));
+      x2 = Math.floor(Math.random() * (window.innerWidth - 600 - rejectionNoteWidth));
+      y2 = Math.floor(Math.random() * (window.innerHeight - 300 - rejectionNoteHeight));
     } else {
-      x2 = Math.floor(Math.random() * (window.innerWidth - 300 - (buttonWidth * 3)));
-      y2 = Math.floor(Math.random() * (window.innerHeight - 150 - (buttonHeight * 3)));
+      x2 = Math.floor(Math.random() * (window.innerWidth - rejectionNoteWidth));
+      y2 = Math.floor(Math.random() * (window.innerHeight - rejectionNoteHeight));
     }
 
     // Set the rejection note's position
-    if(rejectionNote.current) {
+    
       rejectionNote.current.style.position = 'absolute';
       rejectionNote.current.style.left = `${x2}px`;
       rejectionNote.current.style.top = `${y2}px`;
@@ -130,13 +132,13 @@ export default function Home() {
               </div>
               <p className="text-[9rem] 2xl:text-[12rem] leading-none text-rose-950">my</p>
               <p className="text-[10rem] 2xl:text-[14rem] leading-none text-rose-950 -mt-10">valentine</p>
-              <div className="mt-10 2xl:mt-32 text-3xl font-bold flex justify-center items-center z-50">
+              <div className="mt-10 2xl:mt-32 text-3xl font-bold flex justify-center items-center">
                 <button
                   onClick={handleYes} 
-                  className={`bg-rose-950 text-white px-6 py-3 rounded-lg mt-10 shadow-md ${count > 1 && 'animate-bounce'} transition ease-in-out duration-75 hover:bg-rose-900`}>Yes, I will</button>
+                  className={`z-50 bg-rose-950 text-white px-6 py-3 rounded-lg mt-10 shadow-md ${count > 1 && 'animate-bounce'} transition ease-in-out duration-75 hover:bg-rose-900`}>Yes, I will</button>
                 <button
                   onClick={handleNo}
-                  className="bg-rose-100 hover:bg-rose-300 text-rose-950 px-6 py-3 rounded-lg mt-10 ml-5 shadow-md">No</button>
+                  className="z-50 bg-rose-100 hover:bg-rose-300 text-rose-950 px-6 py-3 rounded-lg mt-10 ml-5 shadow-md">No</button>
               </div>
             </motion.div>          
           )}
@@ -146,7 +148,7 @@ export default function Home() {
         // <RejectionChatComponent messages={messages} />
         <div 
           ref={rejectionNote}
-          className="text-rose-950 text-4xl font-bold z-20 bg-rose-200/50 px-6 py-3">
+          className="text-rose-950 text-4xl font-bold z-10 bg-rose-200/50 px-6 py-3">
           {lmsgs[currentIndex]}
         </div>
       )}
